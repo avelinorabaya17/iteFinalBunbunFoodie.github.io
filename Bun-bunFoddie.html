@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/siopao.jpg" type="img.jpg">
+    <title>BunBun-Foodie</title>
+</head>
+<body>
+    
+
+<!--Nav_Section-->
+<nav class="navbar-sec">
+    <header>
+<h1>*Bun-bun Foodie😋*</h1>
+</header>
+  <div class="links">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#about">About Us</a>
+        <a class="nav-link" href="#products">Products</a>
+        <a class="nav-link" href="#services">Services</a>
+         <a class="nav-link" href="#contacts">Contacts</a>
+      </div>
+</nav>
+</header>
+
+<!--Main_Content-->
+<div class="Main-content">
+        <main class="main-bar" >
+            <h2>Welcome to Bun-bun Foodie</h2>
+            
+            <p><pre>
+            <h4>
+                Let me introduce to you my 
+                new business called "Bun-bun Foodie"  
+                the mini eatery when serve fast foods and lunch.
+                <hr>
+                Click  "Lets Go!"  to see our food products
+             </pre>
+            </h4>
+             
+
+                <img  class="miku-img" src="assets/miku.gif" alt="Miku: Hello!👋">
+
+             
+        </p>
+           
+           <button class="btn-outline-primary"onclick="goToLink()"><h2>Lets Go!</h2></button>
+
+        </main>
+
+       </div>
+
+
+
+
+
+<!--Sections-->
+<section class="Home-sec parallax-bg" id="home">
+    <h3>Home</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aspernatur exercitationem eius atque architecto, consectetur optio quod perferendis, fugiat, dolore amet ullam veritatis nihil expedita rerum iste ex tenetur id?</p>
+</section>
+
+
+<section class="About-sec parallax-bg" id="about">
+    <h3>About Us</h3>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita sunt porro rem suscipit odit nisi pariatur vel tempore, eaque accusamus aspernatur nulla sequi obcaecati quidem dolorum illo magnam fugit error.</p>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="Products-sec parallax-bg" id="products">
+    <h3>Products</h3>
+    
+    <div class="Product-img">
+        <div class="img-list">
+            
+            <div class="slide">
+                <img src="assets/1.png" alt="Product Image 1">
+                <div class="price-tag">Combo Pack:P200</div>
+            </div>
+
+            <div class="slide">
+                <img src="assets/2.png" alt="Product Image 2">
+                <div class="price-tag">Big Siomai:P30</div>
+            </div>
+
+            <div class="slide">
+                <img src="assets/3.png" alt="Product Image 3">
+                <div class="price-tag">Mini Siopao:P10 each</div>
+            </div>
+
+            <div class="slide">
+                <img src="assets/4.png" alt="Product Image 4">
+                <div class="price-tag">
+
+ Chili Garlic / Small - ₱45
+ Chili Garlic / Large - ₱110</div>
+            </div>
+            
+        </div>
+        <button class="prev-btn"><</button>
+        <button class="next-btn">></button>
+    </div>
+</section>
+
+
+    
+</section>
+
+
+
+
+
+
+
+
+<section class="Services-sec parallax-bg" id="services">
+    <h3>Services</h3>
+    <p>Our services is in place buying (Face to Face) and delivery Management. </p>
+
+</section>
+
+
+
+
+<section class="regular-section">
+    
+
+</section>
+
+
+
+
+
+
+
+    
+    <section class="centerBar-Contacts" id="contacts">
+        <h3>Contact Us:</h3>
+        <a class="logo-con" href="https://www.facebook.com/Rabs017"><img class="logo" src="assets/facebook.png" alt=""></a>
+        <a class="logo-con" href="avelinorabaya17@gmail.com"><img class="logo" src="assets/gmail.png" alt=""></a>
+
+    </section>
+
+<!--Fotter-->
+    <footer>
+        <p>&copy; Oct, 14 ,2025 | All Rights Reserved</p>
+    </footer>
+    
+
+
+<script>
+    function goToLink() {
+        window.location.href = "#products";
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const imgList = document.querySelector('.img-list');
+    const images = document.querySelectorAll('.img-list img');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const totalImages = images.length;
+    let currentIndex = 0;
+    const slideWidth = images[0].clientWidth;
+
+    
+    function updateSlider() {
+        const offset = - currentIndex * slideWidth;
+        imgList.style.transform = `translateX(${offset}px)`;
+    }
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < totalImages - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; 
+        }
+        updateSlider(); 
+    });
+    prevBtn.addEventListener('click', () => {
+       
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = totalImages - 1; 
+        }
+        updateSlider();
+    });
+    window.addEventListener('resize', updateSlider);
+});
+</script>
+
+</body>
+</html>
